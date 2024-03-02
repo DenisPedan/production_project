@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // директория, где появляется сборка, но в нашем случае не действует, так как используется webpack
+    "outDir": "./dist/",
+    // подсвечивает все места, где не указан тип
+    // однако, это не означает, что теперь вовсе нельзя использовать any
+    // это означает лишь, что в подобных ситуациях разработчик должен явно использовать any
+    "noImplicitAny": true,
+    // способ модульной сборки
+    "module": "ESNext",
+    // в какую версию ECMAScript будет компилироваться код
+    "target": "es5",
+    // позволяет использовать jsx, как в реакте, также связано с
+    // возможностью не импортировать React в файлы
+    "jsx": "react-jsx",
+    // позволяет обрабатывать не только ts-файлы, но и js-файлы
+    "allowJs": true,
+    // позволяет использовать reuire (значит, возможно, импорты в целом)
+    "moduleResolution": "node",
+    // esModuleInterop позволяет работать с пакетами, которые используют
+    // common js как с обычными пакетами с помощью import (require() module.export) = common js
+    // import Moment from 'moment'
+    // без флага esModuleInterop результат undefined
+    // console.log(Monent)
+    // с флагом результат [object Object]
+    // console.log(Moment)
+    "esModuleInterop": true,
+    // если какая-либо библиотека не имеет default import,
+    // лоадеры вроде ts-loader или babel-loader автоматически создают их
+    // вместо такого импорта
+    // import * as React from 'react'
+    // можно писать такой
+    // import React from 'react'
+    "allowSyntheticDefaultImports": true
+  },
+   "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+}
+}
