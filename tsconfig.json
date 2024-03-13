@@ -26,7 +26,7 @@
     // common js как с обычными пакетами с помощью import (require() module.export) = common js
     // import Moment from 'moment'
     // без флага esModuleInterop результат undefined
-    // console.log(Monent)
+    // console.log(Moment)
     // с флагом результат [object Object]
     // console.log(Moment)
     "esModuleInterop": true,
